@@ -1,0 +1,11 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dbx-a" x1="10" y1="6" x2="26" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#69B9FF" />
+      <stop offset="1" stop-color="#324DE2" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="18" cy="10" rx="9" ry="3.6" fill="url(#dbx-a)" />
+  <path d="M9 10v16c0 2 4 3.6 9 3.6s9-1.6 9-3.6V10" stroke="url(#dbx-a)" stroke-width="2.4" fill="none" stroke-linecap="round" />
+  <path d="M9 18c0 2 4 3.6 9 3.6s9-1.6 9-3.6" stroke="url(#dbx-a)" stroke-width="2.4" fill="none" stroke-linecap="round" />
+</svg>

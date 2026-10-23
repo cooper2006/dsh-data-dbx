@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["es2024", "dom"],
+    "types": [],
+    "noEmit": false,
+    "rootDir": "client/src",
+    "outDir": "lib",
+    "allowImportingTsExtensions": false,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false
+  },
+  "include": ["client/src"]
+}

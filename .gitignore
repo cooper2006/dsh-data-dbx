@@ -1,0 +1,13 @@
+# Installed dependencies: `npm install` restores them.
+node_modules/
+
+# Build output: `npm run build` regenerates it from src/ and client/src/.
+lib/
+
+# Local plugin state the harness writes.
+.dsh/cache/
+.dsh/logs/
+*.log
+
+# OS noise.
+.DS_Store

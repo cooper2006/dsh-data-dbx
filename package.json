@@ -1,0 +1,85 @@
+{
+  "name": "dsh-data-dbx",
+  "description": "DBX database connections, a built-in driver stack, SQL execution, and cross-connection federated queries as DeepSeek Harness tools",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**",
+    "locale/*.json",
+    "icon.svg",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.1.5-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-tools": ">=0.1.5-rc.2 <0.3.0"
+  },
+  "dependencies": {
+    "@clickhouse/client": "^1.24.1",
+    "@deepseek-ai/schemastery": "^3.18.0",
+    "dmdb": "^1.0.52452",
+    "mongodb": "^7.7.0",
+    "mysql2": "^3.24.6",
+    "oracledb": "^26.0.0",
+    "pg": "^8.23.1",
+    "redis": "^6.3.0",
+    "tedious": "^20.3.8"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-tools": "0.1.5-rc.2",
+    "@deepseek-ai/dsh-util-values": "^0.1.5-rc.2",
+    "@types/node": "^25.0.0",
+    "@types/pg": "^8.23.1",
+    "@types/tedious": "^4.0.14",
+    "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && tsc -p tsconfig.client.json",
+    "build:host": "tsc -p tsconfig.build.json",
+    "build:client": "tsc -p tsconfig.client.json",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.client.json --noEmit",
+    "verify:api": "node scripts/verify-api.mjs",
+    "verify:pg": "node scripts/verify-pg.mjs",
+    "verify:client": "node scripts/verify-client.mjs",
+    "verify:isolation": "node scripts/verify-isolation.mjs",
+    "verify:mcp": "node scripts/verify-panel.mjs",
+    "verify:mongo": "node scripts/verify-mongo.mjs",
+    "verify:native": "node scripts/verify-native.mjs",
+    "verify:roundtrip": "node scripts/verify-roundtrip.mjs",
+    "verify:store": "node scripts/verify-store.mjs",
+    "verify:transport": "node scripts/verify-transport.mjs",
+    "prepare": "npm run build",
+    "verify:oracle": "node scripts/verify-oracle.mjs",
+    "verify:dm": "node scripts/verify-dm.mjs"
+  }
+}

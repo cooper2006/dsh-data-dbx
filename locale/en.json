@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Database (DBX)",
+    "description": "Self-built connections next to DBX ones: connect, run SQL and inspect table structure with the plugin's own drivers, no DBX needed."
+  }
+}

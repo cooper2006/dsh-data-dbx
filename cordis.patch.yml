@@ -1,0 +1,12 @@
+# The dsh-data-dbx bundle patch: activates the plugin as a profile layer.
+#
+# One host row. `data-dbx` registers the four DBX tools on `ctx.tools` and owns
+# the `dbx-mcp` server process for its fiber.
+#
+# The plugin resolves DBX storage the way the desktop app does:
+# `DBX_DATA_DIR` when set, otherwise the platform data directory plus
+# `com.dbx.app`. Set `dataDir` here (or `DBX_DATA_DIR`) to point at a different
+# DBX store, and `command` to a specific dbx-mcp build.
+- insert:
+    - id: data-dbx
+      name: 'dsh-data-dbx'
